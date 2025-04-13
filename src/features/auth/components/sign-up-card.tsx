@@ -3,11 +3,10 @@
 import { z } from "zod";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
+import { signUpWithGoogle } from "@/lib/oauth";
 import { DottedSeparator } from "@/components/dotted-separator";
 import { Button } from "@/components/ui/button";
 import { 
@@ -135,16 +134,6 @@ export const SignUpCard = () => {
         >
           <FcGoogle className="mr-2 size-5" />
           Login with Google
-        </Button>
-        <Button
-          onClick={() => signUpWithGithub()}
-          disabled={isPending}
-          variant="secondary"
-          size="lg"
-          className="w-full"
-        >
-          <FaGithub className="mr-2 size-5" />
-          Login with Github
         </Button>
       </CardContent>
       <div className="px-7">
